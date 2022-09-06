@@ -8,7 +8,7 @@ class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
 
   @override
-  _GameScreenState createState() => _GameScreenState();
+  State<GameScreen> createState() => _GameScreenState();
 }
 
 class _GameScreenState extends State<GameScreen> {
@@ -55,7 +55,8 @@ class _GameScreenState extends State<GameScreen> {
             child: Container(
               margin: const EdgeInsets.only(top: 10),
               child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5),
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     child: Container(
@@ -88,7 +89,8 @@ class _GameScreenState extends State<GameScreen> {
                             bestTime = durationToString(gecenZaman);
                           });
                           saveBestTime(durationToString(gecenZaman));
-                        } else if (stringToInt(durationToString(gecenZaman)) < stringToInt(bestTime)) {
+                        } else if (stringToInt(durationToString(gecenZaman)) <
+                            stringToInt(bestTime)) {
                           setState(() {
                             bestTime = durationToString(gecenZaman);
                           });
